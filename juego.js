@@ -2,10 +2,10 @@ var canvas = document.getElementById("miCanvas");
 var ctx = canvas.getContext("2d");
 
 ancho = 200
-alto = 200
-celulasIniciales = 1000
+alto = 100
+celulasIniciales = 3000
 tiempoRepeticion = 600	// El tiempo esta dado en milisegundos
-tamanioCelula = 3
+tamanioCelula = 6
 
 canvas.width = ancho * tamanioCelula;
 canvas.height = alto * tamanioCelula;
