@@ -3,8 +3,8 @@ var ctx = canvas.getContext("2d");
 
 ancho = 200
 alto = 200
-celulasIniciales = 100000
-tiempoRepeticion = 300	// El tiempo esta dado en milisegundos
+celulasIniciales = 1000
+tiempoRepeticion = 600	// El tiempo esta dado en milisegundos
 tamanioCelula = 3
 
 canvas.width = ancho * tamanioCelula;
