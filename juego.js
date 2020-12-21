@@ -1,8 +1,8 @@
 var canvas = document.getElementById("miCanvas");
 var ctx = canvas.getContext("2d");
 
-ancho = 400
-alto = 400
+ancho = 200
+alto = 200
 celulasIniciales = 100000
 tiempoRepeticion = 300	// El tiempo esta dado en milisegundos
 tamanioCelula = 3
@@ -12,7 +12,7 @@ canvas.height = alto * tamanioCelula;
 
 //	Arreglo donde se guarda el estado del juego
 arreglo = new Array(ancho)
-for(i = 0; i < ancho; i++) 
+for(i = 0; i < ancho; i++)
 	arreglo[i] = new Array(alto);
 for(i = 0; i < ancho; i++)
 	for(j = 0; j < alto; j++)
@@ -49,23 +49,23 @@ function juego() {
 	for(x = 0; x < ancho; x++) {
 		for(y = 0; y < alto; y++) {
 			alrededor = 0;
-			if(x - 1 > 0 && y - 1 > 0 && arreglo[x-1][y-1] == 1) 
+			if(x - 1 > 0 && y - 1 > 0 && arreglo[x-1][y-1] == 1)
 				alrededor++
-			if(y - 1 > 0 && arreglo[x][y-1] == 1) 
+			if(y - 1 > 0 && arreglo[x][y-1] == 1)
 				alrededor++
 			if(x + 1 < ancho && y - 1 > 0 && arreglo[x+1][y-1] == 1)
 				alrededor++
-			if(x - 1 > 0 && arreglo[x-1][y] == 1) 
+			if(x - 1 > 0 && arreglo[x-1][y] == 1)
 				alrededor++
-			if(x + 1 < ancho && arreglo[x+1][y] == 1) 
+			if(x + 1 < ancho && arreglo[x+1][y] == 1)
 				alrededor++
-			if(y + 1 < alto && x - 1 > 0 && arreglo[x-1][y+1] == 1) 
+			if(y + 1 < alto && x - 1 > 0 && arreglo[x-1][y+1] == 1)
 				alrededor++
-			if(y + 1 < alto && arreglo[x][y+1] == 1) 
+			if(y + 1 < alto && arreglo[x][y+1] == 1)
 				alrededor++
-			if(x + 1 < ancho && y + 1 < alto && arreglo[x+1][y+1] == 1) 
+			if(x + 1 < ancho && y + 1 < alto && arreglo[x+1][y+1] == 1)
 				alrededor++
-			
+
 			if(arreglo[x][y] == 1) {
 				if(alrededor == 2 || alrededor == 3) {
 					copia[x][y] = 1;
