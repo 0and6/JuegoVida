@@ -12,3 +12,8 @@ celulasIniciales--->Determina el número de celulas vivas que contiene el tabler
 tiempoRepeticion--->Determina el tiempo entre un estado y otro del juego, esta dado en milisegundos.
 
 tamanioCelula--->Determina el tamaño que contendra una celula en la pantalla, esta dado en pixeles.
+
+
+## Controles
+
+Tecla espacio  ----> Realiza una pausa o reanuda la ejecución del juego

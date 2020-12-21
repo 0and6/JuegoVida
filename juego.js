@@ -7,6 +7,9 @@ celulasIniciales = 3000
 tiempoRepeticion = 600	// El tiempo esta dado en milisegundos
 tamanioCelula = 6
 
+var eventoRepeticion;
+var ejecucion = true;
+
 canvas.width = ancho * tamanioCelula;
 canvas.height = alto * tamanioCelula;
 
@@ -30,7 +33,8 @@ llenarTableroAzar()
 
 presentacion()
 
-window.setInterval(juego, tiempoRepeticion)
+eventoRepeticion = window.setInterval(juego, tiempoRepeticion)
+//ejecucion = true;
 
 function presentacion() {
 	w = 20
@@ -43,7 +47,7 @@ function presentacion() {
 }
 
 function juego() {
-
+    ejecucion = true;
 	dibujar();
 
 	for(x = 0; x < ancho; x++) {
@@ -108,3 +112,20 @@ function llenarTableroAzar() {
 		arreglo[x][y] = 1;
 	}
 }
+
+
+
+document.onkeyup = function(event) {
+    var codigo = event.which || event.keyCode;
+
+    console.log("Presionada: " +  codigo);
+    if(codigo == 32) {
+        if(ejecucion) {
+            ejecucion = false;
+            clearInterval(eventoRepeticion);
+        } else {
+            ejecucion = true;
+            eventoRepeticion = window.setInterval(juego, tiempoRepeticion);
+        }
+    }
+};
